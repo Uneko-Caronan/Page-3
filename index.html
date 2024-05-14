@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caronan Unico - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1e1e1e; 
+            font-family: 'Roboto', sans-serif; 
+            color: #e0e0e0; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center;
+        }
+        header {
+            background-color: #333; 
+            color: #fff; 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 4px solid #444;
+        }
+        header h1 {
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+        main {
+            padding: 20px; 
+        }
+        section {
+            margin-bottom: 20px; 
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            transition: background-color 0.3s ease; 
+            font-weight: 700;
+        }
+        .button:hover {
+            background-color: #0056b3; 
+        }
+        #search-bar {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Caronan Unico - Portfolio</h1>
+    </header>
+    <main>
+        <input type="text" id="search-bar" placeholder="Search activities..." onkeyup="filterActivities()">
+        <section id="about">
+            <h2>MOVIE REVIEW (Q3, Q#1)</h2>
+            <a class="button" href="https://uneko-caronan.github.io/Campus_ICT9Section_Q3Quiz1_Caronan_Unico/">Go to Activity</a>
+        </section>
+        <section id="projects">
+            <h2>FAV ARTIST (Q3, Project)</h2>
+            <a class="button" href="https://uneko-caronan.github.io/FV_s_ICT9E_Q3Project_Carnonan_Unico/">Go to Activity</a>
+        </section>
+        <section id="projects">
+            <h2>INTERESTS GHIBLI (Q2, SW#1)</h2>
+            <a class="button" href="https://uneko-caronan.github.io/Campus_ICT9Section_Q3Ex1_Caronan_Unico/">Go to Activity</a>
+        </section>
+        <section id="projects">
+            <h2>KFC MENU (Q2, Q#1)</h2>
+            <a class="button" href="https://uneko-caronan.github.io/Q2_SW-2/">Go to Activity</a>
+        </section>
+    </main>
+    <script>
+        function filterActivities() {
+            let input = document.getElementById('search-bar').value.toLowerCase();
+            let sections = document.querySelectorAll('main section');
+            
+            sections.forEach(section => {
+                let text = section.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    section.style.display = '';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
